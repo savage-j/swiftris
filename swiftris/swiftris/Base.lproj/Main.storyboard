@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k2f-yp-UhL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="Ygf-AU-TJC">
+            <objects>
+                <viewController id="k2f-yp-UhL" customClass="HomeViewController" customModule="swiftris" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zEs-b0-NRd"/>
+                        <viewControllerLayoutGuide type="bottom" id="mUD-6P-AxU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hTp-sh-wxW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-Yi-OQU">
+                                <rect key="frame" x="36" y="85" width="248" height="122"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmh-IS-oBf">
+                                <rect key="frame" x="25" y="290" width="270" height="237"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlV-qx-960">
+                                        <rect key="frame" x="145" y="11" width="113" height="100"/>
+                                        <state key="normal" image="Timed"/>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="show" identifier="timedGame" id="OsT-Wc-X5l"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjj-YL-xIJ">
+                                        <rect key="frame" x="13" y="11" width="113" height="100"/>
+                                        <state key="normal" image="Endless"/>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="show" identifier="endlessGame" id="xJQ-bl-CzM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrO-iG-3b4">
+                                        <rect key="frame" x="145" y="127" width="113" height="100"/>
+                                        <state key="normal" image="Achievements"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX9-y9-yur">
+                                        <rect key="frame" x="13" y="127" width="113" height="100"/>
+                                        <state key="normal" image="Leaders"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ff3-Yi-OQU" secondAttribute="trailing" constant="20" id="GUQ-lu-BeQ"/>
+                            <constraint firstItem="ff3-Yi-OQU" firstAttribute="leading" secondItem="hTp-sh-wxW" secondAttribute="leadingMargin" constant="20" id="MN4-46-SJm"/>
+                            <constraint firstItem="ff3-Yi-OQU" firstAttribute="top" secondItem="zEs-b0-NRd" secondAttribute="bottom" constant="65" id="PzE-fa-ABB"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83I-oV-y61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="392"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -57,9 +116,27 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-Zo-n5d">
+                                <rect key="frame" x="16" y="512" width="159" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76E-zd-VPl">
+                                <rect key="frame" x="227" y="362" width="79" height="44"/>
+                                <state key="normal" image="back_arrow"/>
+                                <connections>
+                                    <segue destination="k2f-yp-UhL" kind="show" id="reR-lv-pcW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oj5-Zo-n5d" secondAttribute="trailing" constant="129" id="2Du-la-iXL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Oj5-Zo-n5d" secondAttribute="leading" id="ffs-ka-Lj2"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Oj5-Zo-n5d" secondAttribute="bottom" constant="20" id="m0H-8r-uYh"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="YIl-dL-9Cq" appends="YES" id="TTy-NO-JvR"/>
                             <outletCollection property="gestureRecognizers" destination="hMz-z0-gFm" appends="YES" id="I4Q-dn-jsM"/>
@@ -71,6 +148,7 @@
                     <connections>
                         <outlet property="levelLabel" destination="eQ6-ty-xf2" id="ay4-No-d7l"/>
                         <outlet property="scoreLabel" destination="L6v-kT-pp1" id="LMH-fL-vFr"/>
+                        <outlet property="timeRemainingLabel" destination="Oj5-Zo-n5d" id="HpC-Iv-Acb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -97,6 +175,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Achievements" width="113" height="100"/>
+        <image name="Endless" width="113" height="100"/>
+        <image name="Leaders" width="113" height="100"/>
+        <image name="Timed" width="147" height="127"/>
+        <image name="back_arrow" width="14" height="22"/>
+        <image name="logo" width="167" height="122"/>
         <image name="whitebg" width="84" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xJQ-bl-CzM"/>
+    </inferredMetricsTieBreakers>
 </document>
